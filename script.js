@@ -1,92 +1,133 @@
+let companies =
+JSON.parse(localStorage.getItem("companies")) || [];
+
+function saveCompanies()
+{
+    localStorage.setItem(
+        "companies",
+        JSON.stringify(companies)
+    );
+}
+
+function renderCompanies()
+{
+    let container =
+    document.getElementById(
+        "companyContainer"
+    );
+
+    container.innerHTML="";
+
+    companies.forEach((company,index)=>
+    {
+        let card =
+        document.createElement("div");
+
+        card.className="card";
+
+        card.innerHTML=
+        `
+        <h3>${company.name}</h3>
+
+        <p>📧 ${company.email}</p>
+
+        <span class="status">
+            🔵 Applied
+        </span>
+
+        <br>
+
+        <button
+        class="delete-btn"
+        onclick="deleteCompany(${index})">
+        Delete
+        </button>
+        `;
+
+        card.onclick=()=>
+        {
+            window.open(
+                company.link,
+                "_blank"
+            );
+        };
+
+        container.appendChild(card);
+    });
+}
+
 function addCompany()
 {
     let name =
-    document.getElementById("companyName").value;
+    document.getElementById(
+        "companyName"
+    ).value;
 
     let link =
-    document.getElementById("companyLink").value;
+    document.getElementById(
+        "companyLink"
+    ).value;
 
     let email =
-    document.getElementById("companyEmail").value;
+    document.getElementById(
+        "companyEmail"
+    ).value;
 
     if(name==="" || link==="")
     {
-        alert("Please fill all fields");
+        alert("Fill all fields");
         return;
     }
 
-    let card =
-    document.createElement("div");
+    companies.push({
+        name,
+        link,
+        email
+    });
 
-    card.className="card";
+    saveCompanies();
 
-    card.innerHTML=
-    `
-    <h3>${name}</h3>
+    renderCompanies();
 
-    <p>📧 ${email}</p>
+    document.getElementById(
+        "companyName"
+    ).value="";
 
-    <span class="status assessment">
-        🟡 Applied
-    </span>
-    `;
-
-    card.onclick=function()
-    {
-        window.open(link,"_blank");
-    };
-
-    document
-    .getElementById("companyContainer")
-    .appendChild(card);
-
-    document.getElementById("companyName").value="";
-    document.getElementById("companyLink").value="";
-    document.getElementById("companyEmail").value="";
+    document.getElementById(
+        "companyLink"
+    ).value="";
 }
 
-function addAccount()
+function deleteCompany(index)
 {
-    let title =
-    document.getElementById("accountTitle").value;
+    companies.splice(index,1);
 
-    let email =
-    document.getElementById("accountEmail").value;
+    saveCompanies();
 
-    let username =
-    document.getElementById("accountUsername").value;
+    renderCompanies();
+}
 
-    let hint =
-    document.getElementById("accountHint").value;
-
-    if(title==="")
-    {
-        alert("Enter Account Name");
-        return;
-    }
-
-    let card =
-    document.createElement("div");
-
-    card.className="account-card";
-
-    card.innerHTML=
-    `
-    <h3>${title}</h3>
-
-    <p>📧 ${email}</p>
-
-    <p>👤 ${username}</p>
-
-    <p>🔑 ${hint}</p>
-    `;
+document
+.getElementById("searchBox")
+.addEventListener(
+"keyup",
+function()
+{
+    let value =
+    this.value.toLowerCase();
 
     document
-    .getElementById("accountContainer")
-    .appendChild(card);
+    .querySelectorAll(".card")
+    .forEach(card=>
+    {
+        card.style.display=
+        card.innerText
+        .toLowerCase()
+        .includes(value)
 
-    document.getElementById("accountTitle").value="";
-    document.getElementById("accountEmail").value="";
-    document.getElementById("accountUsername").value="";
-    document.getElementById("accountHint").value="";
-}
+        ? "block"
+        : "none";
+    });
+});
+
+renderCompanies();
