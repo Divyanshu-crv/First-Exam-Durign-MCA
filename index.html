@@ -16,28 +16,51 @@
 
         <input type="text" id="searchBox" placeholder="Search Company...">
     </header>
+    <section class="stats">
+
+        <div class="stat-card">
+            <h3 id="totalCompanies">0</h3>
+            <p>Total Companies</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="appliedCount">0</h3>
+            <p>🔵 Applied</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="assessmentCount">0</h3>
+            <p>🟡 Assessment</p>
+        </div>
+
+        <div class="stat-card">
+            <h3 id="selectedCount">0</h3>
+            <p>🟢 Selected</p>
+        </div>
+
+    </section>
 
     <section class="profile">
 
-    <h2>👤 My Profile</h2>
+        <h2>👤 My Profile</h2>
 
-    <div class="profile-card">
+        <div class="profile-card">
 
-        <p><strong>Name:</strong> Divyanshu</p>
+            <p><strong>Name:</strong> Divyanshu</p>
 
-        <p>
-            <strong>Primary Email:</strong>
-            tdivyanshu846@gmail.com
-        </p>
+            <p>
+                <strong>Primary Email:</strong>
+                td8
+            </p>
 
-        <p>
-            <strong>Course:</strong>
-            MCA
-        </p>
+            <p>
+                <strong>Course:</strong>
+                MCA
+            </p>
 
-    </div>
+        </div>
 
-</section>
+    </section>
 
     <section class="add-company">
 
@@ -57,35 +80,50 @@
 
     <section class="add-company">
 
-    <h2>🔐 Account Vault</h2>
+        <h2>🔐 Account Vault</h2>
 
-    <input
-    type="text"
-    id="accountTitle"
-    placeholder="Account Name">
+        <input type="text" id="accountTitle" placeholder="Account Name">
 
-    <input
-    type="email"
-    id="accountEmail"
-    placeholder="Email">
+        <input type="email" id="accountEmail" placeholder="Email">
 
-    <input
-    type="text"
-    id="accountUsername"
-    placeholder="Username">
+        <select id="companyStatus">
 
-    <input
-    type="text"
-    id="accountHint"
-    placeholder="Password Hint">
+            <option>🔵 Applied</option>
+            <option>🟡 Assessment</option>
+            <option>🟠 Interview</option>
+            <option>🟢 Selected</option>
+            <option>🔴 Rejected</option>
 
-    <button onclick="addAccount()">
-        Save Account
-    </button>
+        </select>
 
-</section>
+        <input type="text" id="accountUsername" placeholder="Username">
 
-<section id="accountContainer"></section>
+        <input type="text" id="accountHint" placeholder="Password Hint">
+
+        <button onclick="addAccount()">
+            Save Account
+        </button>
+
+    </section>
+
+    <section id="accountContainer"></section>
+
+    <section class="add-company">
+
+        <h2>📝 Notes Vault</h2>
+
+        <input type="text" id="noteTitle" placeholder="Title">
+
+        <textarea id="noteText" placeholder="Write your note here...">
+    </textarea>
+
+        <button onclick="addNote()">
+            Save Note
+        </button>
+
+    </section>
+
+    <section id="noteContainer"></section>
 
     <section id="companyContainer">
 

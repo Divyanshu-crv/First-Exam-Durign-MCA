@@ -32,8 +32,8 @@ function renderCompanies()
         <p>📧 ${company.email}</p>
 
         <span class="status">
-            🔵 Applied
-        </span>
+    ${company.status}
+</span>
 
         <br>
 
@@ -72,6 +72,8 @@ function addCompany()
     document.getElementById(
         "companyEmail"
     ).value;
+    let status =
+document.getElementById("companyStatus").value;
 
     if(name==="" || link==="")
     {
@@ -79,11 +81,12 @@ function addCompany()
         return;
     }
 
-    companies.push({
-        name,
-        link,
-        email
-    });
+companies.push({
+    name,
+    link,
+    email,
+    status
+});
 
     saveCompanies();
 
