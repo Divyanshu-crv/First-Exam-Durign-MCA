@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Exam Dashboard</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.header{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:2.5rem;
+}
+
+.header p{
+    opacity:0.8;
+    margin-top:10px;
+}
+
+.search-box{
+    margin:20px auto;
+    max-width:500px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    font-size:16px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    padding:25px;
+    color:white;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.card p{
+    opacity:0.8;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 20px;
+    text-decoration:none;
+    color:white;
+    background:#00c896;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00a77f;
+}
+
+.footer{
+    text-align:center;
+    color:white;
+    margin-top:30px;
+    opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>📚 Exam Dashboard</h1>
+        <p>Track all exams, jobs and applications in one place</p>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search exams, companies...">
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>🚀 TCS NextStep</h2>
+            <p>Track your TCS application status.</p>
+
+            <a class="btn"
+            href="https://nextstep.tcsapps.com/indiacampus/#/home/track-my-application"
+            target="_blank">
+            Open Portal
+            </a>
+        </div>
+
+        <!-- Future Cards -->
+
+        <div class="card">
+            <h2>💼 Infosys</h2>
+            <p>Add your Infosys link here.</p>
+
+            <a class="btn" href="#">
+            Coming Soon
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>🏢 Wipro</h2>
+            <p>Add your Wipro link here.</p>
+
+            <a class="btn" href="#">
+            Coming Soon
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Made by Divyanshu ❤️
+    </div>
+
+</div>
+
+</body>
+</html>
