@@ -14,8 +14,14 @@
     <header>
         <h1>🚀 Career Command Center</h1>
 
-        <input type="text" id="searchBox" placeholder="Search Company...">
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Company...">
     </header>
+
+    <!-- Dashboard -->
+
     <section class="stats">
 
         <div class="stat-card">
@@ -40,13 +46,18 @@
 
     </section>
 
+    <!-- Profile -->
+
     <section class="profile">
 
         <h2>👤 My Profile</h2>
 
         <div class="profile-card">
 
-            <p><strong>Name:</strong> Divyanshu</p>
+            <p>
+                <strong>Name:</strong>
+                Divyanshu
+            </p>
 
             <p>
                 <strong>Primary Email:</strong>
@@ -62,29 +73,27 @@
 
     </section>
 
-    <section class="add-company">
-
-        <h2>Add Company</h2>
-
-        <input type="text" id="companyName" placeholder="Company Name">
-
-        <input type="url" id="companyLink" placeholder="Portal Link">
-
-        <input type="email" id="companyEmail" placeholder="Registered Email" value="tdivyanshu846@gmail.com">
-
-        <button onclick="addCompany()">
-            Add Company
-        </button>
-
-    </section>
+    <!-- Add Company -->
 
     <section class="add-company">
 
-        <h2>🔐 Account Vault</h2>
+        <h2>🏢 Add Company</h2>
 
-        <input type="text" id="accountTitle" placeholder="Account Name">
+        <input
+            type="text"
+            id="companyName"
+            placeholder="Company Name">
 
-        <input type="email" id="accountEmail" placeholder="Email">
+        <input
+            type="url"
+            id="companyLink"
+            placeholder="Portal Link">
+
+        <input
+            type="email"
+            id="companyEmail"
+            placeholder="Registered Email"
+            value="tdivyanshu846@gmail.com">
 
         <select id="companyStatus">
 
@@ -96,9 +105,37 @@
 
         </select>
 
-        <input type="text" id="accountUsername" placeholder="Username">
+        <button onclick="addCompany()">
+            Add Company
+        </button>
 
-        <input type="text" id="accountHint" placeholder="Password Hint">
+    </section>
+
+    <!-- Account Vault -->
+
+    <section class="add-company">
+
+        <h2>🔐 Account Vault</h2>
+
+        <input
+            type="text"
+            id="accountTitle"
+            placeholder="Company / Website Name">
+
+        <input
+            type="email"
+            id="accountEmail"
+            placeholder="Email Used">
+
+        <input
+            type="text"
+            id="accountUsername"
+            placeholder="Username">
+
+        <input
+            type="text"
+            id="accountHint"
+            placeholder="Password Hint">
 
         <button onclick="addAccount()">
             Save Account
@@ -108,14 +145,20 @@
 
     <section id="accountContainer"></section>
 
+    <!-- Notes Vault -->
+
     <section class="add-company">
 
         <h2>📝 Notes Vault</h2>
 
-        <input type="text" id="noteTitle" placeholder="Title">
+        <input
+            type="text"
+            id="noteTitle"
+            placeholder="Note Title">
 
-        <textarea id="noteText" placeholder="Write your note here...">
-    </textarea>
+        <textarea
+            id="noteText"
+            placeholder="Write your note here..."></textarea>
 
         <button onclick="addNote()">
             Save Note
@@ -125,22 +168,9 @@
 
     <section id="noteContainer"></section>
 
-    <section id="companyContainer">
+    <!-- Company Cards -->
 
-        <div class="card"
-            onclick="window.open('https://nextstep.tcsapps.com/indiacampus/#/home/track-my-application','_blank')">
-
-            <h3>TCS</h3>
-
-            <p>📧 Your Registered Email</p>
-
-            <span class="status assessment">
-                🟡 Assessment
-            </span>
-
-        </div>
-
-    </section>
+    <section id="companyContainer"></section>
 
     <script src="script.js"></script>
 
